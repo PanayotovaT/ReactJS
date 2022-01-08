@@ -1,0 +1,30 @@
+Form {
+    position: relative;
+}
+
+.mb-3 {
+    width: 40%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.mb-3:first-child {
+    top: 50px;
+}
+
+.mb-3:nth-child(2) {
+    top: 150px;
+}
+
+.btn-submit{
+    position: absolute;
+    top: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
