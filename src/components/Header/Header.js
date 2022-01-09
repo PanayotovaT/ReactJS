@@ -20,6 +20,7 @@ export const Header = () => {
                         navbarScroll
                     >
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/my-list">My List</Nav.Link>
                         <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         <NavDropdown title="Link" id="navbarScrollingDropdown">
                             <NavDropdown.Item href="#">Action</NavDropdown.Item>

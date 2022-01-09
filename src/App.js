@@ -7,6 +7,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { Header } from './components/Header/Header';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
+import MyList from './components/MyList.js/MyList';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Header />
           <Routes>
               <Route path="/" element={<Home />} ></Route>
+              <Route path="/my-list" element={<MyList />}></Route>
               <Route path="/login" element={<Login />}></Route>
           </Routes>
       </div>

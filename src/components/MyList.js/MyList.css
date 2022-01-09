@@ -1,0 +1,17 @@
+.carousel {
+    width: 500px;
+    border: none;
+    background: none;
+}
+
+.carousel img {
+   width: auto;
+   height: 500px;
+   object-fit: cover;
+    
+}
+
+
+/* .active.carousel-item-start{
+    border: none;
+} */
