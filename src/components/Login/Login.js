@@ -10,11 +10,14 @@ const Login = () => {
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
+    // throw new Error('Some error... :)');
     const submitHandler = (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const {email, password } = Object.fromEntries(formData);
+    
+
         login(email, password);
         navigate('/');
     };
