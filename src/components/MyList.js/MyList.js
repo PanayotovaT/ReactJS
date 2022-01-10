@@ -1,9 +1,11 @@
 import { Carousel } from 'react-bootstrap';
 import './MyList.css';
 import { useState, useEffect } from 'react';
+import { isAuth } from '../../hoc/isAuth';
 
-
-export const MyList = () => {
+export const MyList = ({
+    user
+}) => {
     const [dogs, setDogs] = useState([]);
 
     useEffect(() => {
@@ -11,30 +13,38 @@ export const MyList = () => {
             .then(res => res.json())
             .then(result => {
                 setDogs(result.message);
-            })
-    },[])
-    console.log(dogs)
+            });
+        return () => {
+            setDogs([]);
+        };
+    }, []);
+
+
     return (
-        <Carousel>
-            {dogs.length > 0 ? 
-            dogs.map(x => (<Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src={x}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                </Carousel.Item> )
-            )
-            : ''
-        }
-
-
-        </Carousel>
+        <>
+            <h2>{user.email}</h2>
+            <Carousel>
+                {dogs.length > 0 ?
+                    dogs.map(x => (<Carousel.Item key={x}>
+                        <img
+                            className="d-block w-100"
+                            src={x}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <h3>First slide label</h3>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>)
+                    )
+                    : ''
+                }
+            </Carousel>
+        </>
     );
 };
 
-export default MyList;
+// const EnhancedComponent = isAuth(MyList);
+// export default EnhancedComponent;
+
+export default isAuth(MyList);
